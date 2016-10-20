@@ -9,16 +9,38 @@
   .item {
     display: block;
     padding: 10px;
-    background-color: rgba(255,255,255, 0.6);
+    background-color: rgba(210, 209, 209, 0.6);
     font-weight: 600;
     margin-bottom: 2px;
-    transition-delay: 2s;
+
     &:hover {
       background-color: #ffffff;
+
+      .remove-button {
+        opacity: 1;
+      }
     }
 
     a {
       text-transform: none;
+    }
+
+    .remove-button {
+      float:right;
+      display: block;
+      margin-left: 10px;
+      opacity: 0;
+      transition-duration: 100ms;
+
+      &:hover {
+        opacity: 0.3;
+      }
+
+      &:before {
+        margin-right: 0;
+        width: auto;
+        height: auto;
+      }
     }
   }
 
@@ -26,11 +48,12 @@
     display: block;
     left: 50%;
     position: relative;
-    margin: 20px -18px 20px 0;
+    margin: 20px  0;
 
     &::before {
       font-size: 46px;
       color: #ff8787;
+      margin-left: -18px;
     }
   }
 }
