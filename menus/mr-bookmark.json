@@ -17,6 +17,10 @@
             {
               "label": "Toggle",
               "command": "mr-bookmark:toggle"
+            },
+            {
+              "label": "Remove all",
+              "command": "mr-bookmark:removeAll"
             }
           ]
         }
