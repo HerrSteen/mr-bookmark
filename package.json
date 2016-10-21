@@ -2,12 +2,12 @@
   "name": "mr-bookmark",
   "main": "./lib/mr-bookmark",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "Bookmark your favorite files",
   "keywords": [
   ],
   "activationCommands": {
   },
-  "repository": "https://github.com/atom/mr-bookmark",
+  "repository": "https://github.com/HerrSteen/mr-bookmark",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
