@@ -1,3 +1,6 @@
-# mr-bookmark package
+# Mr.Bookmark
 
-Mr.Bookmark is an easy to use plugin to favorite the files you use the most.
+Mr.Bookmark let's you favorite your files in a sidebar.
+
+Happy coding!
+
