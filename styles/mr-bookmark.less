@@ -10,21 +10,14 @@
   .item {
     display: block;
     padding: 10px;
-    background-color: rgba(210, 209, 209, 0.6);
+    background-color: @overlay-background-color;
     font-weight: 600;
     margin-bottom: 2px;
     width:100%;
 
-    &:hover {
-      background-color: #ffffff;
-
-      .remove-button {
-        opacity: 1;
-      }
-    }
-
     a {
       text-transform: none;
+      color: @text-color;
     }
 
     .remove-button {
@@ -35,13 +28,21 @@
       transition-duration: 100ms;
 
       &:hover {
-        opacity: 0.3;
+        color:#fff;
       }
 
       &:before {
         margin-right: 0;
         width: auto;
         height: auto;
+      }
+    }
+
+    &:hover {
+      background-color: @background-color-highlight;
+      
+      .remove-button {
+        opacity: 1;
       }
     }
   }
