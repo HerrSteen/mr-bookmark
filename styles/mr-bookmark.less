@@ -15,6 +15,10 @@
     margin-bottom: 2px;
     width:100%;
 
+    &.active {
+      border-left: solid 3px green;
+    }
+
     a {
       text-transform: none;
       color: @text-color;
@@ -40,7 +44,7 @@
 
     &:hover {
       background-color: @background-color-highlight;
-      
+
       .remove-button {
         opacity: 1;
       }
@@ -55,7 +59,7 @@
 
     &::before {
       font-size: 46px;
-      color: #ff8787;
+      color: #ff704d;
       margin-left: -18px;
     }
   }
