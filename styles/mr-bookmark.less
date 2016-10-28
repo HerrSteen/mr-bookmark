@@ -7,32 +7,47 @@
 .mr-bookmark-panel {
   width: 240px;
 
-  .item {
+  ul.list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li.list-item {
     display: block;
     padding: 10px;
+    height: 40px;
     background-color: @overlay-background-color;
     font-weight: 600;
     margin-bottom: 2px;
     width:100%;
+    transition-duration: 2s;
+
+    &.hidden {
+      opacity: 0;
+    }
 
     &.active {
       border-left: solid 3px green;
     }
 
-    a {
+    p.file-name {
+      font-size: 12px;
+      letter-spacing: 0.1px;
       text-transform: none;
       color: @text-color;
+      float:left;
+      user-select: none;
     }
 
-    .remove-button {
-      float:right;
+    a.list-item-remove-button {
       display: block;
-      margin-left: 10px;
-      opacity: 0;
+      float:right;
+      color:#fff;
+      opacity: 0.5;
       transition-duration: 100ms;
-
+      margin-top: 3px;
       &:hover {
-        color:#fff;
+        opacity: 1;
       }
 
       &:before {
@@ -46,7 +61,7 @@
       background-color: @background-color-highlight;
 
       .remove-button {
-        opacity: 1;
+        // opacity: 1;
       }
     }
   }
