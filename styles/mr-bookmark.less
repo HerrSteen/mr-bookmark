@@ -22,7 +22,7 @@
     width:100%;
     transition-duration: 200ms;
     cursor: pointer;
-    
+
     &.file-hidden {
       opacity: 0;
     }
@@ -66,6 +66,42 @@
       }
     }
   }
+
+  .add-button {
+    margin: 20px 0 20px -25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    display: block;
+    background-color: #5e5f60;
+
+    &:hover {
+      background-color: #c5c9ce;
+    }
+
+    .line-hor, .line-ver {
+      background-color: @background-color-highlight;
+      display: block;
+      position: absolute;
+    }
+
+    .line-hor {
+      width:20px;
+      height: 6px;
+      top:17px;
+      left:10px;
+    }
+
+    .line-ver {
+      width: 6px;
+      height: 20px;
+      top:10px;
+      left:17px;
+    }
+  }
+
 
   .icon-heart {
     display: block;
