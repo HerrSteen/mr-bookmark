@@ -4,31 +4,55 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-.my-right-panel {
+.mr-bookmark-panel {
   width: 240px;
 
-  .item {
+  ul.list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li.list-item {
     display: block;
     padding: 10px;
+    height: 40px;
     background-color: @overlay-background-color;
     font-weight: 600;
     margin-bottom: 2px;
     width:100%;
+    transition-duration: 200ms;
+    cursor: pointer;
 
-    a {
-      text-transform: none;
-      color: @text-color;
+    &.file-hidden {
+      opacity: 0;
     }
 
-    .remove-button {
-      float:right;
-      display: block;
-      margin-left: 10px;
-      opacity: 0;
-      transition-duration: 100ms;
+    &.active {
+      border-left: solid 3px green;
+    }
 
+    &.extra-margin {
+        margin-bottom: 7px;
+    }
+
+    p.file-name {
+      font-size: 12px;
+      letter-spacing: 0.1px;
+      text-transform: none;
+      color: @text-color;
+      float:left;
+      user-select: none;
+    }
+
+    a.list-item-remove-button {
+      display: block;
+      float:right;
+      color:#fff;
+      opacity: 0.5;
+      transition-duration: 100ms;
+      margin-top: 3px;
       &:hover {
-        color:#fff;
+        opacity: 1;
       }
 
       &:before {
@@ -40,23 +64,45 @@
 
     &:hover {
       background-color: @background-color-highlight;
-      
+
       .remove-button {
-        opacity: 1;
+        // opacity: 1;
       }
     }
   }
 
-  .icon-heart {
-    display: block;
-    left: 50%;
+  .add-button {
+    margin: 20px 0 20px -25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     position: relative;
-    margin: 20px  0;
+    left: 50%;
+    display: block;
+    background-color: #5e5f60;
 
-    &::before {
-      font-size: 46px;
-      color: #ff8787;
-      margin-left: -18px;
+    &:hover {
+      background-color: #c5c9ce;
+    }
+
+    .line-hor, .line-ver {
+      background-color: @background-color-highlight;
+      display: block;
+      position: absolute;
+    }
+
+    .line-hor {
+      width:20px;
+      height: 6px;
+      top:17px;
+      left:10px;
+    }
+
+    .line-ver {
+      width: 6px;
+      height: 20px;
+      top:10px;
+      left:17px;
     }
   }
 }
