@@ -16,19 +16,27 @@
     display: block;
     padding: 10px;
     height: 40px;
-    background-color: @overlay-background-color;
+    background-color: @button-background-color;
     font-weight: 600;
     margin-bottom: 2px;
     width:100%;
-    transition-duration: 200ms;
+    transition-duration: 300ms;
     cursor: pointer;
+
+    &:hover {
+      background-color: @button-background-color-hover;
+
+      a.list-item-remove-button {
+        color: @button-border-color;
+      }
+    }
 
     &.file-hidden {
       opacity: 0;
     }
 
     &.active {
-      border-left: solid 3px green;
+      border-left: solid 4px @button-border-color;
     }
 
     &.extra-margin {
@@ -47,12 +55,12 @@
     a.list-item-remove-button {
       display: block;
       float:right;
-      color:#fff;
-      opacity: 0.5;
+      color:@base-background-color;
       transition-duration: 100ms;
       margin-top: 3px;
+
       &:hover {
-        opacity: 1;
+        // color: @button-border-color;
       }
 
       &:before {
@@ -62,31 +70,30 @@
       }
     }
 
-    &:hover {
-      background-color: @background-color-highlight;
 
-      .remove-button {
-        // opacity: 1;
-      }
-    }
   }
 
   .add-button {
-    margin: 20px 0 20px -25px;
-    width: 40px;
-    height: 40px;
+    margin: 18px 0 18px -25px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     position: relative;
     left: 50%;
     display: block;
-    background-color: #5e5f60;
+    // background-color: #5e5f60;
+    background-color: @button-background-color;
 
     &:hover {
-      background-color: #c5c9ce;
+      background-color: @button-background-color-hover;
+
+      .line-hor, .line-ver {
+        // background-color: @base-background-color;
+      }
     }
 
     .line-hor, .line-ver {
-      background-color: @background-color-highlight;
+      background-color: @button-border-color;
       display: block;
       position: absolute;
     }
@@ -94,15 +101,15 @@
     .line-hor {
       width:20px;
       height: 6px;
-      top:17px;
-      left:10px;
+      top:15px;
+      left:8px;
     }
 
     .line-ver {
       width: 6px;
       height: 20px;
-      top:10px;
-      left:17px;
+      top:8px;
+      left:15px;
     }
   }
 }
