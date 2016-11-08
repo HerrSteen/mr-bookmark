@@ -5,7 +5,7 @@
         "label": "Toggle mr-bookmark",
         "command": "mr-bookmark:toggle"
       }
-    ]
+    ]    
   },
   "menu": [
     {
