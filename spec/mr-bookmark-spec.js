@@ -5,7 +5,7 @@ import MrBookmark from '../lib/mr-bookmark';
 describe('MrBookmark', () => {
   let workspaceElement, activationPromise;
 
-  it("has add button", (done) => {
+  it("has add button", (done) => { 
 
     // atom.packages.activatePackage('mr-bookmark').then((a,b) => {
     atom.workspace.open("this.dataset.filePath").then((a,b) => {
