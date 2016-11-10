@@ -10,7 +10,7 @@
   ul.list {
     list-style: none;
     padding-left: 0;
-  }  
+  }
 
   li.list-item {
     display: block;
@@ -31,20 +31,12 @@
       }
     }
 
-    &.file-hidden {
+    &.file-hidden { 
       opacity: 0;
     }
 
     &.active {
       border-left: solid 4px @button-border-color;
-    }
-
-    &.git-edited {
-      background-color: orange;
-    }
-
-    &.git-staged {
-      background-color: green;
     }
 
     &.extra-margin {
@@ -78,6 +70,21 @@
       }
     }
 
+    &.git-modified {
+      background-color: @text-color-modified;
+
+      p.file-name {
+        // color: black;
+      }
+    }
+
+    &.git-added {
+      background-color: @text-color-added;
+
+      p.file-name {
+        // color: black;
+      }
+    }
 
   }
 
