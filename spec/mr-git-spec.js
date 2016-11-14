@@ -8,9 +8,9 @@ describe('MrGit', () => {
   let fileListView, files, workspaceElement, container;
 
   before((done) => {
-    workspaceElement = atom.views.getView(atom.workspace)
+    workspaceElement = atom.views.getView(atom.workspace) 
     // document = workspaceElement;
- 
+
     files = [];
     files.push({path: "folder/file1.js", name: "file1"});
     files.push({path: "folder/file2.js", name: "file2"});
