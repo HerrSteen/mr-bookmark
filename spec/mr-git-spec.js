@@ -2,53 +2,54 @@
 
 import MrGit from '../lib/mr-git';
 import gitHelper from './helpers/git-helper';
+import FileListView from "../lib/file-list-view";
 
 describe('MrGit', () => {
-  let tempGitHelper;
-  // let stringid;
+  let fileListView, files, workspaceElement, container;
 
-  before(() => {
-    // console.log("BEFORE");
-    // stringid = JSON.stringify(gitHelper);
+  before((done) => {
+    workspaceElement = atom.views.getView(atom.workspace)
+    // document = workspaceElement;
+ 
+    files = [];
+    files.push({path: "folder/file1.js", name: "file1"});
+    files.push({path: "folder/file2.js", name: "file2"});
 
-  });
-
-  // let workspaceElement, activationPromise;
-  beforeEach(() => {
-    // console.log(gitHelper.statuses);
-    // tempGitHelper = null;
-    // tempGitHelper = Object.assign({}, gitHelper);
-    // console.log("stringid", stringid);
-    // tempGitHelper = JSON.parse(stringid);
-    // console.log("tempGitHelper", tempGitHelper);
-    console.log("BEFORE EACH");
-
-    // tempGitHelper = Object.create(gitHelper);
-    tempGitHelper = (JSON.parse(JSON.stringify(gitHelper)));
-
-  });
-
-  it("fires up a repository", (done) => {
     atom.project.getRepositories = () => {
       return [gitHelper];
     };
 
-    // var git = new MrGit();
+    gitHelper.addPath("folder/file1.js", 0);
 
-    tempGitHelper.addPath("my-custom-file.js", 200);
-    // tempGitHelper.triggerChangeStatus("myPath", 200);
-    // console.log(tempGitHelper.getPathStatus("spec/mr-git-spec.js"));
+    atom.packages.activatePackage('mr-bookmark').then((res, err) => {
+      container = workspaceElement.querySelector(".mr-bookmark-panel");
+      fileListView = new FileListView(container);
 
-    done();
-  });
+      files.forEach((file) => {
+        fileListView.addItem(file.path, file.name);
+      });
 
-  it("fires up a repository", () => {
-
-      console.log("test");
-      console.log(tempGitHelper.statuses);
-      // console.log(tempGitHelper.statuses);
+      done();
+    });
 
   });
 
+  it("has its own wrapper", () => {
+    expect(container).to.exist;
+    var itemz = workspaceElement.querySelector('[data-file-path="folder/file1.js"]');
+    console.log("itemz.length", itemz.length);
+  });
+
+  it("containes added files", () => {
+    let items = container.getElementsByClassName('list-item');
+    expect(items.length).to.equal(2);
+  });
+
+  it("has the right color if its git modified", () => {
+
+    gitHelper.triggerChangeStatus("folder/file1.js", 256);
+    let items = container.getElementsByClassName('git-modified');
+    expect(items.length).to.equal(1);
+  });
 
 });
