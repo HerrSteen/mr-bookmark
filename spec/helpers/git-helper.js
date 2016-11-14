@@ -10,7 +10,7 @@ pub.statuses["spec/mr-bookmark-spec.js"] = 128;
 pub.statuses["spec/mr-git-spec.js"] = 250;
 
 
-pub.addPath(path, status) {
+pub.addPath = function(path, status) {
   pub.statuses[path] = status;
 }
 
