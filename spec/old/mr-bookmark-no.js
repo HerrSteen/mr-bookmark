@@ -11,18 +11,25 @@ describe('MrBookmark', () => {
   let workspaceElement, activationPromise;
 
   beforeEach(() => {
-    workspaceElement = atom.views.getView(atom.workspace);
+
 
     waitsForPromise(() => {
-      return atom.packages.activatePackage('mr-bookmark');
-    })
+      console.log("open file");
+      console.log( JSON.stringify(atom.workspace.open("spec/mr-bookmark-spec.js")));
+    });
+
+    waitsForPromise(() => {
+      atom.packages.activatePackage('mr-bookmark');
+    });
+
+
   });
 
   describe('when mr-bookmark is activated', () => {
 
     it("is positioned in the right-panel")
 
-    it('shows the add button', () => {
+    it('shows an add button', () => {
       expect(workspaceElement.querySelector('.add-button')).toExist();
     });
 
@@ -33,15 +40,13 @@ describe('MrBookmark', () => {
 
   describe("When files are added", () => {
     let edidor;
-    beforeEach(() => {
-      // waitsForPromise(() => {
-      //   // atom.workspace.open("spec/mr-bookmark-spec.js").then((e) => {
-      //   //   editor = e
-      //   });
-      let addButton = workspaceElement.querySelector('.add-button');
-    });
 
     it("Ads file with right path to the file-list", () => {
+      // const mr = new MrBookmark();
+      // let addButton = workspaceElement.querySelector('.add-button');
+      MrBookmark.addFileButtonClick(null);
+
+      // mr.addButton.click();
     });
   });
   /*
