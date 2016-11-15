@@ -8,7 +8,7 @@ describe('MrGit', () => {
   let fileListView, files, workspaceElement, container;
 
   before((done) => {
-    workspaceElement = atom.views.getView(atom.workspace) 
+    workspaceElement = atom.views.getView(atom.workspace)
     // document = workspaceElement;
 
     files = [];
@@ -36,8 +36,6 @@ describe('MrGit', () => {
 
   it("has its own wrapper", () => {
     expect(container).to.exist;
-    var itemz = workspaceElement.querySelector('[data-file-path="folder/file1.js"]');
-    console.log("itemz.length", itemz.length);
   });
 
   it("containes added files", () => {
