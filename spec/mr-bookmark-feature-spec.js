@@ -1,14 +1,14 @@
-'use babel';
+"use babel";
 
-import gitHelper from './helpers/git-helper';
-import workspaceHelper from './helpers/workspace-helper';
+import gitHelper from "./helpers/git-helper";
+import workspaceHelper from "./helpers/workspace-helper";
 
-describe('Mr Bookmark', () => {
+describe("Mr Bookmark", () => {
   let workspaceElement, container, mainFolder;
 
   before(() => {
-    mainFolder = "folder"
-    workspaceElement = atom.views.getView(atom.workspace)
+    mainFolder = "folder";
+    workspaceElement = atom.views.getView(atom.workspace);
   });
 
   before(() => {
@@ -20,7 +20,8 @@ describe('Mr Bookmark', () => {
   });
 
   it("activates package", (done) => {
-    atom.packages.activatePackage('mr-bookmark').then((res, err) => {
+    atom.packages.activatePackage("mr-bookmark").then((res, err) => {
+      if (err) done(err);
       done();
     });
   });
@@ -40,13 +41,13 @@ describe('Mr Bookmark', () => {
   });
 
   it("contains added files", () => {
-    let items = container.getElementsByClassName('list-item');
+    const items = container.getElementsByClassName("list-item");
     expect(items.length).to.equal(3);
   });
 
   it("has the right color if it's git modified", () => {
     gitHelper.triggerChangeStatus(`${mainFolder}/f1.js`, 256);
-    let items = container.getElementsByClassName('git-modified');
+    const items = container.getElementsByClassName("git-modified");
     expect(items.length).to.equal(1);
   });
 
