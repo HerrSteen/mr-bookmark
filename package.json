@@ -3,6 +3,7 @@
   "main": "./lib/mr-bookmark",
   "version": "0.7.0",
   "description": "Bookmark your favorite files",
+  "atomTestRunner": "./node_modules/.bin/atom-mocha",
   "keywords": [],
   "activationCommands": {},
   "repository": "https://github.com/HerrSteen/mr-bookmark",
@@ -10,5 +11,8 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "atom-mocha": "^1.0.1"
+  }
 }
