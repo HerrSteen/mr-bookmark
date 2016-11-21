@@ -8,10 +8,11 @@ notifications:
 before_script:
   - npm install
 
-
-script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
+script:
+  - 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
+  - chmod u+x build-package.sh
+  - ./build-package.sh
 
 branches:
   only:
     - master
-    
