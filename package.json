@@ -1,7 +1,7 @@
 {
   "name": "mr-bookmark",
   "main": "./lib/mr-bookmark",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Bookmark your favorite files",
   "atomTestRunner": "./node_modules/.bin/atom-mocha",
   "keywords": [],
