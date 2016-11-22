@@ -2,6 +2,7 @@
 
 import gitHelper from "./helpers/git-helper";
 import workspaceHelper from "./helpers/workspace-helper";
+import mrBookmark from "../lib/mr-bookmark";
 
 describe("Mr Bookmark", () => {
   let workspaceElement, container, mainFolder;
@@ -46,7 +47,6 @@ describe("Mr Bookmark", () => {
   });
 
   it("has the right color if it's git modified", () => {
-    console.log("gitHelper", gitHelper);
     gitHelper.triggerChangeStatus(`${mainFolder}/f1.js`, 256);
     const items = container.getElementsByClassName("git-modified");
     expect(items.length).to.equal(1);
