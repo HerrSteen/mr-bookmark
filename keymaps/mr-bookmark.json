@@ -1,6 +1,6 @@
 {
   "atom-workspace": {
-    "ctrl-alt-o": "mr-bookmark:toggle"
+    "ctrl-alt-o": "mr-bookmark:toggle",
+    "ctrl-alt-r": "mr-bookmark:removeAll"
   }
 }
- 
