@@ -4,19 +4,14 @@ language: generic
 env:
   global:
     - APM_TEST_PACKAGES=""
-    - ATOM_LINT_WITH_BUNDLED_NODE="true"
 
   matrix:
     - ATOM_CHANNEL=stable
-    - ATOM_CHANNEL=beta
 
 os:
-  - linux
   - osx
 
-before_script:
-  - npm install
-  
+
 ### Generic setup follows ###
 script:
   - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
@@ -40,7 +35,4 @@ sudo: false
 addons:
   apt:
     packages:
-    - build-essential
     - git
-    - libgnome-keyring-dev
-    - fakeroot
