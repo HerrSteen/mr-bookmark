@@ -2,7 +2,7 @@ language: objective-c
 
 env:
   global:
-    - APM_TEST_PACKAGES="mr-bookmark"
+    - APM_TEST_PACKAGES=""
 
 notifications:
   email:
