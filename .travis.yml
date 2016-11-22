@@ -1,4 +1,4 @@
-language: objective-c
+language: generic
 
 env:
   global:
@@ -20,6 +20,11 @@ script:
 branches:
   only:
     - master
+
+git:
+  depth: 10
+
+sudo: false
 
 addons:
   apt:
