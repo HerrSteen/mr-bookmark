@@ -5,18 +5,30 @@
         "label": "Toggle mr-bookmark",
         "command": "mr-bookmark:toggle"
       }
-    ]     
+    ]
   },
   "menu": [
     {
       "label": "Packages",
       "submenu": [
         {
-          "label": "mr-bookmark",
+          "label": "Mr. Bookmark",
           "submenu": [
             {
               "label": "Toggle",
               "command": "mr-bookmark:toggle"
+            },
+            {
+              "label": "Add current file",
+              "command": "mr-bookmark:add"
+            },
+            {
+              "label": "Add all files",
+              "command": "mr-bookmark:addAll"
+            },
+            {
+              "label": "Remove current files",
+              "command": "mr-bookmark:remove"
             },
             {
               "label": "Remove all",
