@@ -15,6 +15,7 @@ describe("Mr Bookmark", () => {
   before(() => {
     atom.workspace.getActivePaneItem = workspaceHelper.getActivePaneItem;
     atom.project.getPaths = workspaceHelper.getPaths;
+    atom.workspace.getPaneItems = workspaceHelper.getPaneItems;
     atom.project.getRepositories = () => {
       return [gitHelper];
     };
@@ -25,7 +26,6 @@ describe("Mr Bookmark", () => {
       if (err) done(err);
       done();
     });
-
   });
 
   it("has its own container", () => {
@@ -53,4 +53,34 @@ describe("Mr Bookmark", () => {
     expect(items.length).to.equal(1);
   });
 
+  it("removes all files when mr-bookmark:removeAll is pressed", () => {
+    atom.commands.dispatch(workspaceElement, "mr-bookmark:removeAll");
+
+    const items = container.getElementsByClassName("list-item");
+    expect(items.length).to.equal(0);
+  });
+
+  it("ad all files workspace when mr-bookmark:addAll is pressed", () => {
+    atom.commands.dispatch(workspaceElement, "mr-bookmark:addAll");
+
+    const items = container.getElementsByClassName("list-item");
+    expect(items.length).to.equal(3);
+  });
+
+  it("removes all files when mr-bookmark:removeAll is pressed again", () => {
+    atom.commands.dispatch(workspaceElement, "mr-bookmark:removeAll");
+
+    const items = container.getElementsByClassName("list-item");
+    expect(items.length).to.equal(0);
+  });
+
+  it("ad all files workspace when mr-bookmark:addAllGit is pressed", () => {
+    gitHelper.addPath("g1.jpg", 256);
+    gitHelper.addPath("g2.jpg", 256);
+
+    atom.commands.dispatch(workspaceElement, "mr-bookmark:addAllGit");
+
+    const items = container.getElementsByClassName("list-item");
+    expect(items.length).to.equal(2);
+  });
 });
