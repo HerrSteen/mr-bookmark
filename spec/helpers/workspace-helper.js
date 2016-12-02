@@ -6,7 +6,7 @@ const workspace = {buffer: {file: {path: {} } } };
 pub.setEditorFile = function (file) {
   workspace.buffer.file.path = file;
 };
-
+//Changed git
 pub.getActivePaneItem = function () {
   return workspace;
 };

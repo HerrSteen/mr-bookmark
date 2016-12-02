@@ -6,7 +6,7 @@ pub.storedStatusFunctions = [];
 pub.storedStatusesFunctions = [];
 
 pub.statuses = [];
-
+//changed git
 pub.addPath = function (path, status) {
   pub.statuses[path] = status;
 };

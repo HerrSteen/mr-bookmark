@@ -1,8 +1,9 @@
 "use babel";
+/* eslint-disable no-unused-expressions */
 
 import gitHelper from "./helpers/git-helper";
 import workspaceHelper from "./helpers/workspace-helper";
-import mrBookmark from "../lib/mr-bookmark";
+// import mrBookmark from "../lib/mr-bookmark";
 
 describe("Mr Bookmark", () => {
   let workspaceElement, container, mainFolder;
