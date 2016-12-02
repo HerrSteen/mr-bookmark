@@ -47,7 +47,7 @@ describe("Mr Bookmark", () => {
     expect(items.length).to.equal(3);
   });
 
-  it("has the right color if it's git modified", () => {
+  it("has the right class if it's git modified", () => {
     gitHelper.triggerChangeStatus(`${mainFolder}/f1.js`, 256);
     const items = container.getElementsByClassName("git-modified");
     expect(items.length).to.equal(1);

@@ -6,6 +6,7 @@
 
 .mr-bookmark-panel {
   width: 240px;
+  // width: 180px;
 
   ul.list {
     list-style: none;
@@ -40,6 +41,7 @@
         background-color: @text-color-modified;
       }
     }
+
     &.step {
       &:before {
         width: 5px;
@@ -72,6 +74,7 @@
 
     &.extra-margin {
         margin-bottom: 11px;
+
         &:after {
           position: absolute;
           left: 0px;
@@ -100,9 +103,6 @@
       transition-duration: 100ms;
       margin-top: 3px;
 
-      &:hover {
-      }
-
       &:before {
         margin-right: 0;
         width: auto;
@@ -123,9 +123,6 @@
 
     &:hover {
       background-color: @button-background-color-hover;
-
-      .line-hor, .line-ver {
-      }
     }
 
     .line-hor, .line-ver {
