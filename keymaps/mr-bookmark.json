@@ -5,6 +5,11 @@
     "ctrl-cmd-r  ctrl-cmd-a": "mr-bookmark:removeAll",
     "ctrl-cmd-a ctrl-cmd-c": "mr-bookmark:add",
     "ctrl-cmd-a ctrl-cmd-a": "mr-bookmark:addAll",
-    "ctrl-cmd-a ctrl-cmd-g": "mr-bookmark:addAllGit"
-  }
+    "ctrl-cmd-a ctrl-cmd-g": "mr-bookmark:addAllGit",
+    "alt-cmd-up": "mr-bookmark:stepUp"
+  },
+  "atom-text-editor": {
+    "alt-cmd-up": "mr-bookmark:stepUp",
+    "alt-cmd-down": "mr-bookmark:stepDown"
+ }
 }
